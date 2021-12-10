@@ -14,3 +14,23 @@ services:
       - ASPNETCORE_ENVIRONMENT=Development
     volumes:
       - ~/.vsdbg:/remote_debugger:rw
+    container_name: dev-todolistapi
+    networks:
+      - dev-network
+    depends_on:
+      - mongodb
+
+  mongodb:
+    image: mongo
+    ports:
+      - 27017:27017
+    container_name: dev-mongodb
+    networks:
+      - dev-network
+    environment:
+      - MONGO_INITDB_ROOT_USERNAME=dvcandido
+      - MONGO_INITDB_ROOT_PASSWORD=1q2w3e
+      
+networks:
+  dev-network:
+    driver: bridge

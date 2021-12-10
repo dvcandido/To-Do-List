@@ -35,7 +35,7 @@
                 "appProject": "${workspaceFolder}/src/ToDoList.Api/ToDoList.Api.csproj"
             },
             "dockerServerReadyAction": {
-                "uriFormat": "%s://localhost:%s/HelloWorld"
+                "uriFormat": "%s://localhost:%s/api/HelloWorld"
             }
         }
     ]
